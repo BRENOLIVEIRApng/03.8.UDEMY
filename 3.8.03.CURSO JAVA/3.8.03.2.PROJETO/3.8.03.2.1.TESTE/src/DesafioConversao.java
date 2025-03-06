@@ -19,5 +19,6 @@ public class DesafioConversao {
         double media = (salario1 + salario2 + salario3) / 3;
 
         System.out.printf("A média dos salários é %.2f",media);
+        entrada.close();
     }
 }
