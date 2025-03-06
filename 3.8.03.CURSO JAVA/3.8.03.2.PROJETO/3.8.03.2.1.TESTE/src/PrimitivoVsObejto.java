@@ -4,7 +4,8 @@ public class PrimitivoVsObejto {
         
         //So carrega valor no tipo de primitivos 
         String s = "Texto";
-        s.toUpperCase();
+         s = s.toUpperCase();
+        System.out.println(s);
 
         //Wappers versão objeto dos tipo primivivos 
         int a = 123;
