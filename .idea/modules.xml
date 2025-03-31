@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/03.8.UDEMY.iml" filepath="$PROJECT_DIR$/.idea/03.8.UDEMY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.1.TESTE/3.8.03.2.1.TESTE.iml" filepath="$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.1.TESTE/3.8.03.2.1.TESTE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.2.ESRTRUTURAS_DE_REPETICAO/3.8.03.2.2.ESRTRUTURAS_DE_REPETICAO.iml" filepath="$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.2.ESRTRUTURAS_DE_REPETICAO/3.8.03.2.2.ESRTRUTURAS_DE_REPETICAO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.3.CLASSES_METODOS/3.8.03.2.3.CLASSES_METODOS.iml" filepath="$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.3.CLASSES_METODOS/3.8.03.2.3.CLASSES_METODOS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.4.ARRAY_COLETIONS/3.8.03.2.4.ARRAY_COLETIONS.iml" filepath="$PROJECT_DIR$/3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.4.ARRAY_COLETIONS/3.8.03.2.4.ARRAY_COLETIONS.iml" />
+    </modules>
+  </component>
+</project>
