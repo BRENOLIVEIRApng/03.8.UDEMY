@@ -11,12 +11,21 @@ public class Execicio {
         Arrays.toString(notasAlunoA);
         System.out.println(notasAlunoA);
 
-        double total = 0;
+        double totalAlunoA = 0;
         for(int i = 0; i < notasAlunoA.length; i++){
-            total += notasAlunoA[i];
+            totalAlunoA += notasAlunoA[i];
         }
 
-        System.out.println(total / 3);
+        System.out.println(totalAlunoA / notasAlunoA.length);
+
+        double notasAlunoB[] = {6.9, 8.9, 5.5, 10};
+
+        double totalAlunoB = 0;
+        for(int i = 0; i < notasAlunoB.length; i++){
+            totalAlunoB += notasAlunoB[i];
+        }
+
+        System.out.println(totalAlunoB / notasAlunoB.length);
     }
 
 }
