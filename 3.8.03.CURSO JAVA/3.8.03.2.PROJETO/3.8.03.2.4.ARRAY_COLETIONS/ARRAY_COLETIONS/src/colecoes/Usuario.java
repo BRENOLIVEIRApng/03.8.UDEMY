@@ -6,6 +6,14 @@ public class Usuario {
 
     String  nome;
 
+    Usuario(String nome){
+        this.nome = nome;
+    }
+
+    public String toString(){
+        return "Meu nome " + nome;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
