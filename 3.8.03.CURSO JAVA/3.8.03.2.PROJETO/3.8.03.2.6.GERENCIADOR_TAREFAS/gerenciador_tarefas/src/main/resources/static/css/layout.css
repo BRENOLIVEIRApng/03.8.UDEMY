@@ -74,7 +74,7 @@
 
 .filtro-moderno.active {
     background: linear-gradient(145deg, var(--primary-color), #2563eb);
-    color: white;
+    color: rgba(106, 127, 245, 0.719);
     border-color: var(--primary-color);
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
@@ -99,18 +99,17 @@
 }
 
 .filtro-icone.pendente {
-    background: linear-gradient(145deg, #fef3c7, #fbbf24);
+    background: linear-gradient(145deg, #ffd739, #fbbf24);
     color: #92400e;
 }
 
 .filtro-icone.concluida {
-    background: linear-gradient(145deg, #d1fae5, #10b981);
+    background: linear-gradient(145deg, #2fff93, #10b981);
     color: #065f46;
 }
 
 .filtro-moderno.active .filtro-icone {
     background: rgba(255, 255, 255, 0.2);
-    color: white;
     transform: scale(1.1);
 }
 
@@ -151,7 +150,7 @@
 
 .filtro-moderno.active .filtro-badge {
     background: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(105, 105, 105, 0.67);
 }
 
 /* Animação de entrada */

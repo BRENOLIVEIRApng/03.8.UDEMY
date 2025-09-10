@@ -11,8 +11,8 @@ public class PaginaController {
 
     @GetMapping("/")
     public String home(Model model, HttpServletRequest request) {
-        model.addAttribute("titulo", "Início");
-        model.addAttribute("cssPagina", "home");
+        model.addAttribute("titulo", "home");
+        model.addAttribute("cssPagina", "tarefas");
         model.addAttribute("jsPagina", "tarefas");
         model.addAttribute("conteudo", "tarefas");
         model.addAttribute("requestURI", request.getRequestURI());

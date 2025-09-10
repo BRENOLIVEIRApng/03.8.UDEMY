@@ -3,5 +3,6 @@
     "java.project.sourcePaths": [
         "3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.1.TESTE/src",
         "3.8.03.CURSO JAVA/3.8.03.2.PROJETO/3.8.03.2.6.GERENCIADOR_TAREFAS/gerenciador_tarefas/src/main/java/com/breno/gerenciador_tarefas"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
