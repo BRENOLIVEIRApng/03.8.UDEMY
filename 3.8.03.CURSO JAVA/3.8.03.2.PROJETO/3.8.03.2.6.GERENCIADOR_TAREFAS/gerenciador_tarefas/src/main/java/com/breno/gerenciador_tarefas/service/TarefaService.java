@@ -1,34 +1,34 @@
 package com.breno.gerenciador_tarefas.service;
 
 import com.breno.gerenciador_tarefas.model.Tarefa;
-import com.breno.gerenciador_tarefas.repository.tarefaRepositorio;
+import com.breno.gerenciador_tarefas.repository.TarefaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class tarefaServico {
+public class TarefaService {
 
-    private final tarefaRepositorio repositorio;
+    private final TarefaRepository repository;
 
-    public tarefaServico(tarefaRepositorio repositorio) {
-        this.repositorio = repositorio;
+    public TarefaService(TarefaRepository repository) {
+        this.repository = repository;
     }
 
     public List<Tarefa> listarTodas() {
-        return repositorio.findAll();
+        return repository.findAll();
     }
 
     public Optional<Tarefa> buscarPorId(Long id) {
-        return repositorio.findById(id);
+        return repository.findById(id);
     }
 
     public Tarefa salvar(Tarefa tarefa) {
-        return repositorio.save(tarefa);
+        return repository.save(tarefa);
     }
 
     public void deletarPorId(Long id) {
-        repositorio.deleteById(id);
+        repository.deleteById(id);
     }
 }

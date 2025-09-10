@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="header">
+<th:block th:fragment="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" th:href="@{/}">
@@ -15,14 +15,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/}" 
-                           th:classappend="${requestURI == '/'} ? 'active' : ''">
+                        <a class="nav-link" th:href="@{/}" th:classappend="${requestURI == '/'} ? 'active' : ''">
                             <i class="fas fa-home me-1"></i> Início
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/tarefas}"
-                           th:classappend="${requestURI == '/tarefas'} ? 'active' : ''">
+                            th:classappend="${requestURI == '/tarefas'} ? 'active' : ''">
                             <i class="fas fa-list me-1"></i> Lista de Tarefas
                         </a>
                     </li>
@@ -30,5 +29,6 @@
             </div>
         </div>
     </nav>
-</div>
+</th:block>
+
 </html>

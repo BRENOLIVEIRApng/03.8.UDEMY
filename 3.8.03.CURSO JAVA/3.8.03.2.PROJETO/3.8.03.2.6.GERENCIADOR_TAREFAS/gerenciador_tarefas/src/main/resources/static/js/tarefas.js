@@ -10,6 +10,7 @@ class GerenciadorTarefas {
         this.configurarEventListeners();
         await this.carregarTarefas();
         this.atualizarEstatisticas();
+        this.atualizarContadorFiltrado();
     }
 
     configurarEventListeners() {
@@ -19,10 +20,10 @@ class GerenciadorTarefas {
             this.adicionarTarefa();
         });
 
-        // Filtros
-        document.querySelectorAll('.filtro-btn').forEach(btn => {
+        // Filtros modernos
+        document.querySelectorAll('.filtro-moderno').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const filtro = e.target.dataset.filtro;
+                const filtro = e.currentTarget.dataset.filtro;
                 this.aplicarFiltro(filtro);
             });
         });
@@ -52,6 +53,16 @@ class GerenciadorTarefas {
         }
 
         const tarefasFiltradas = this.filtrarTarefas(this.tarefas);
+        
+        if (tarefasFiltradas.length === 0) {
+            lista.innerHTML = `
+                <div class="text-center py-5 text-muted">
+                    <i class="fas fa-filter fa-3x mb-3 opacity-50"></i>
+                    <p>Nenhuma tarefa encontrada para o filtro selecionado.</p>
+                </div>
+            `;
+            return;
+        }
         
         lista.innerHTML = tarefasFiltradas.map(tarefa => this.criarCardTarefa(tarefa)).join('');
     }
@@ -116,11 +127,12 @@ class GerenciadorTarefas {
         this.filtroAtual = filtro;
         
         // Atualiza botões de filtro
-        document.querySelectorAll('.filtro-btn').forEach(btn => {
+        document.querySelectorAll('.filtro-moderno').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.filtro === filtro);
         });
 
         this.renderizarTarefas();
+        this.atualizarContadorFiltrado();
     }
 
     async adicionarTarefa() {
@@ -148,6 +160,7 @@ class GerenciadorTarefas {
                 gerenciadorUI.mostrarNotificacao('Tarefa adicionada com sucesso!', 'success');
                 await this.carregarTarefas();
                 this.atualizarEstatisticas();
+                this.atualizarContadorFiltrado();
             } else {
                 throw new Error('Erro na resposta do servidor');
             }
@@ -170,6 +183,7 @@ class GerenciadorTarefas {
                 gerenciadorUI.mostrarNotificacao(mensagem, 'info');
                 await this.carregarTarefas();
                 this.atualizarEstatisticas();
+                this.atualizarContadorFiltrado();
             }
         } catch (error) {
             console.error('Erro ao atualizar tarefa:', error);
@@ -187,6 +201,7 @@ class GerenciadorTarefas {
                 gerenciadorUI.mostrarNotificacao('Tarefa excluída com sucesso!', 'warning');
                 await this.carregarTarefas();
                 this.atualizarEstatisticas();
+                this.atualizarContadorFiltrado();
             }
         } catch (error) {
             console.error('Erro ao excluir tarefa:', error);
@@ -199,9 +214,38 @@ class GerenciadorTarefas {
         const concluidas = this.tarefas.filter(t => t.concluida).length;
         const pendentes = total - concluidas;
 
+        // Atualiza estatísticas principais
         document.getElementById('total-tarefas').textContent = total;
         document.getElementById('concluidas-tarefas').textContent = concluidas;
         document.getElementById('pendentes-tarefas').textContent = pendentes;
+
+        // Atualiza badges dos filtros com animação
+        this.atualizarBadgeFiltro('badge-todas', total);
+        this.atualizarBadgeFiltro('badge-pendentes', pendentes);
+        this.atualizarBadgeFiltro('badge-concluidas', concluidas);
+    }
+
+    atualizarBadgeFiltro(badgeId, valor) {
+        const badge = document.getElementById(badgeId);
+        if (badge) {
+            badge.textContent = valor;
+            badge.classList.add('updated');
+            setTimeout(() => badge.classList.remove('updated'), 500);
+        }
+    }
+
+    atualizarContadorFiltrado() {
+        const contador = document.getElementById('contador-filtrado');
+        const tarefasFiltradas = this.filtrarTarefas(this.tarefas);
+        const total = tarefasFiltradas.length;
+
+        const mensagens = {
+            'todas': `Mostrando ${total} tarefa${total !== 1 ? 's' : ''}`,
+            'pendentes': `${total} tarefa${total !== 1 ? 's' : ''} pendente${total !== 1 ? 's' : ''}`,
+            'concluidas': `${total} tarefa${total !== 1 ? 's' : ''} concluída${total !== 1 ? 's' : ''}`
+        };
+
+        contador.textContent = mensagens[this.filtroAtual] || 'Nenhuma tarefa';
     }
 }
 
