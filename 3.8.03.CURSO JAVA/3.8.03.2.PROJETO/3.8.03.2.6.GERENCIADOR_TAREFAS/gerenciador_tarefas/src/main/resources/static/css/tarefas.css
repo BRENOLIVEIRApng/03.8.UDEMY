@@ -4,7 +4,7 @@
 }
 
 .tarefa-item {
-    background: white;
+    background: red;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1rem;
@@ -48,6 +48,7 @@
 }
 
 .tarefa-prioridade {
+    background: red;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -78,8 +79,9 @@
 .filtro-btn.active,
 .filtro-btn:hover {
     background: var(--primary-color);
-    color: rgb(179, 179, 179);
+    color: var(--primary-color);
     border-color: var(--primary-color);
+    z-index: -1;
 }
 
 /* Estatísticas */
